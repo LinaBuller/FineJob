@@ -16,12 +16,9 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isShrinkResources = false
         }
     }
     compileOptions {
@@ -47,4 +44,8 @@ dependencies {
     //koin
     implementation (libs.koin.core)
     implementation (libs.koin.android)
+
+    //adapterDelegates
+    implementation (libs.adapterdelegates4.kotlin.dsl)
+    implementation (libs.adapterdelegates4.kotlin.dsl.viewbinding)
 }

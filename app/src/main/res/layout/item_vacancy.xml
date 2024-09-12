@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        style="@style/CustomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/vacancy_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical"
+                android:paddingEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/materialButton"
+                app:layout_constraintEnd_toStartOf="@+id/icon"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--//TODO сделать стиль для этого текста  Small.Regular но только зеленый-->
+
+                <TextView
+                    android:id="@+id/text_info_search_employees"
+                    style="@style/TextTypo.Small.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="Сейчас просматривает 1 человек"
+                    android:textColor="@color/green" />
+
+                <TextView
+                    android:id="@+id/name_vacancy"
+                    style="@style/TextTypo.Medium.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Дизайнер для маркетплейсов Wildberries, Ozon , добавим еще парочку слов чтоб стало понятно красиво ли переносятся слова" />
+
+                <TextView
+                    android:id="@+id/money_vacancy"
+                    style="@style/TextTypo.Large.Semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="1500-2900 Br" />
+
+                <TextView
+                    android:id="@+id/town_company_name"
+                    style="@style/TextTypo.Small.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Минск" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/company_name"
+                        style="@style/TextTypo.Small.Regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="Министрество кучи непонятных слов для того чтоб совсем непонятно было что они делают Еком дизайнЕком дизайнЕком дизайн" />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/company_verify_icon"
+                        android:src="@drawable/ic_type_check_mark_state_default" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+                    <!-- //TODO вставить картинку,написать к ней описание-->
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_type_exp_state_default" />
+
+                    <TextView
+                        android:id="@+id/experience"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:fontFamily="@font/sf_pro_display_regular"
+                        android:gravity="center"
+                        android:text="Опыт от 1 года до 3 лет"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <!-- //TODO Постараться учесть склонение месяца в зависимости от дня.-->
+                <TextView
+                    android:id="@+id/publish_time"
+                    style="@style/CommentText.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="10dp"
+                    android:text="Опубликовано 20 февраля" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/favorite_icon"
+                android:src="@drawable/selector_favorite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton"
+                style="@style/CustomRoundButton"
+                android:layout_width="match_parent"
+                android:text="@string/will_respond"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- //TODO добавить плавающую кнопку карты при раскрытом списке вакансий-->
+</LinearLayout>

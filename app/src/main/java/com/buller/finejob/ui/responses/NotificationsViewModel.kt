@@ -1,4 +1,4 @@
-package com.buller.finejob.ui.notifications
+package com.buller.finejob.ui.responses
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

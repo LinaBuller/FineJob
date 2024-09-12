@@ -15,4 +15,4 @@ data class Vacancy(
     val description: String,
     val responsibilities: String,
     val questions: List<String>
-)
+): DisplayableItem

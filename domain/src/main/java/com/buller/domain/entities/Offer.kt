@@ -5,4 +5,4 @@ data class Offer(
     val id: String,
     val link: String,
     val title: String
-)
+):DisplayableItem

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.vacancy.VacancyFragment">
+    <!-- //TODO заменить иконки на правильные-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        tools:visibility="gone">
+
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="Back arrow"
+            android:src="@drawable/ic_type_left_arrow_state_default"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end">
+
+            <ImageView
+                android:id="@+id/button_see"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_type_eye_state_active"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/button_share"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_type_share_state_default"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/button_favorite"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/selector_favorite"
+                app:tint="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/show_name_vacancy"
+        style="@style/TextTypo.NormalLarge.Semibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="UI/UX Designer"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/show_info_salary"
+        style="@style/TextTypo.Small.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:text="Уровень дохода не указан"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/show_experience"
+        style="@style/TextTypo.Small.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Требуемый опыт: от 1 года до 3 лет"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/show_employment"
+        style="@style/TextTypo.Small.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:text="Полная занятость, полный день"
+        tools:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        tools:visibility="gone">
+        <!-- //TODO сделать стиль под эти карты-->
+        <androidx.cardview.widget.CardView
+            style="@style/CustomCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/dark_green"
+            app:contentPadding="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/show_responses"
+                    style="@style/TextTypo.Small.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxWidth="160dp"
+                    android:text="147 человек уже откликнулись" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_type_responses_state_default" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            style="@style/CustomCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/dark_green">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:id="@+id/show_people"
+                    style="@style/TextTypo.Small.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:maxWidth="160dp"
+                    android:text="2 человека сейчас смотрят" />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_type_looking_state_default" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        style="@style/CustomCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        tools:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:id="@+id/show_name_company"
+                    style="@style/TextTypo.Medium.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Мобирикс" />
+                <!-- //TODO заменить иконки на правильные-->
+                <ImageView
+                    android:id="@+id/img_verify"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/ic_home_black_24dp" />
+
+            </LinearLayout>
+
+            <!-- //TODO тут должна быть картаб но врядли-->
+            <androidx.cardview.widget.CardView
+                style="@style/CustomCardView"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/dark_green">
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/show_company_address"
+                style="@style/TextTypo.Small.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Минск, улица Бирюзова, 4/5" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/show_info_company"
+        style="@style/TextTypo.Small.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="MOBYRIX - динамично развивающаяся продуктовая IT-компания, специализирующаяся на разработке мобильных приложений для iOS и Android. Наша команда работает над собственными продуктами в разнообразных сферах: от утилит до развлечений и бизнес-приложений.\nМы ценим талант и стремление к инновациям и в данный момент в поиске талантливого UX/UI Designer, готового присоединиться к нашей команде и внести значимый вклад в развитие наших проектов."
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/show_vacancy_tasks"
+        style="@style/TextTypo.Large.Semibold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Ваши задачи"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/show_info_vacancy_tasks"
+        style="@style/TextTypo.Small.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="-Проектировать пользовательский опыт, проводить UX исследования;\n-Разрабатывать адаптивный дизайн интерфейса для мобильных приложений;\n-Разрабатывать быстрые прототипы для тестирования идеи дизайна и их последующая; интеграция на основе обратной связи от команды и пользователей;\n-Взаимодействовать с командой разработчиков для обеспечения точной реализации ваших дизайнов;\n-Анализ пользовательского опыта и адаптация под тренды."
+        tools:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        style="@style/TextTypo.Medium.Medium"
+        android:text="Задайте вопрос работодателю"/>
+
+    <TextView
+        android:id="@+id/publish_time"
+        style="@style/CommentText.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Он получит его с откликом на вакансию" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_question" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_more_vacancies"
+        style="@style/CustomButton.Green"
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/will_respond"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</LinearLayout>

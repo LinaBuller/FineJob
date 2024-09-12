@@ -2,8 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
-    id("com.google.devtools.ksp").version("1.9.22-1.0.17")
+    id("com.google.devtools.ksp") version "2.0.20-1.0.25"
 }
 
 android {
@@ -21,12 +20,9 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isShrinkResources = false
         }
     }
     compileOptions {
@@ -56,7 +52,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(libs.symbol.processing.api)
     //koin
     implementation (libs.koin.core)
     implementation (libs.koin.android)
@@ -67,5 +62,9 @@ dependencies {
     ksp(libs.moshi.kotlin.codegen)
     implementation(libs.converter.moshi)
     implementation(libs.logging.interceptor)
+
+    //adapterDelegates
+    implementation (libs.adapterdelegates4.kotlin.dsl)
+    implementation (libs.adapterdelegates4.kotlin.dsl.viewbinding)
 
 }

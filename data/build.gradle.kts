@@ -1,8 +1,9 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
+    alias(libs.plugins.androidLibrary)
+    id ("com.google.devtools.ksp") version "2.0.20-1.0.25"
+
 }
 
 android {
@@ -10,22 +11,14 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.buller.data"
         minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
+        debug {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isShrinkResources = false
         }
     }
     compileOptions {
@@ -53,6 +46,6 @@ dependencies {
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.moshi)
-    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
+    ksp(libs.moshi.kotlin.codegen)
     implementation(libs.converter.moshi)
 }

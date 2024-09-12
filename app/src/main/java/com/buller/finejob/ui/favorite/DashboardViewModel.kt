@@ -1,4 +1,4 @@
-package com.buller.finejob.ui.dashboard
+package com.buller.finejob.ui.favorite
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

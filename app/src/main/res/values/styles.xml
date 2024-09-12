@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BasicText" parent="Widget.MaterialComponents.TextView">
+
+    </style>
+
+    <style name="TextSize.SuperSmall" parent="BasicText">
+        <item name="android:textSize">7sp</item>
+    </style>
+
+    <style name="TextSize.NormalSmall" parent="BasicText">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextSize.Small" parent="BasicText">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextSize.Medium" parent="BasicText">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextSize.Large" parent="BasicText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="TextSize.NormalLarge" parent="BasicText">
+        <item name="android:textSize">22sp</item>
+    </style>
+    
+    <style name="TextTypo.SuperSmall.Regular" parent="TextSize.SuperSmall">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+    <style name="TextTypo.NormalSmall.Regular" parent="TextSize.NormalSmall">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+    <style name="TextTypo.Small.Regular" parent="TextSize.Small">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+    <style name="TextTypo.Small.Medium" parent="TextSize.Small">
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
+    </style>
+
+    <style name="TextTypo.Medium.Semibold" parent="TextSize.Medium">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+    </style>
+
+    <style name="TextTypo.Medium.Medium" parent="TextSize.Medium">
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
+    </style>
+
+    <style name="TextTypo.Large.Semibold" parent="TextSize.Large">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+    </style>
+
+    <style name="TextTypo.NormalLarge.Semibold" parent="TextSize.NormalLarge">
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+    </style>
+
+    <style name="CommentText" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/grey_3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CommentText.Medium" parent="CommentText">
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
+    </style>
+
+    <style name="CommentText.Regular" parent="CommentText">
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+</resources>

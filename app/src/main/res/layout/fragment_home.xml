@@ -3,20 +3,180 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_home"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/grey_2"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- Будет менятся в зависимости открыт список или нет-->
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/search_keywords_icon"
+                    android:src="@drawable/ic_type_search_state_default" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_layout_login"
+                    style="@style/CustomTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/CustomTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:hint="@string/hint_job_title_keywords"
+                        android:paddingStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- //TODO сделать из этой кнопки стиль для таких же-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/grey_2"
+            app:cardCornerRadius="10dp">
+
+            <ImageButton
+                android:id="@+id/filter_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/grey_2"
+                android:src="@drawable/ic_type_filter_state_default" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout_for_expand_vacancy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        tools:visibility="visible">
+
+        <TextView
+            style="@style/TextTypo.Small.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="145 вакансий" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end">
+
+            <TextView
+                style="@style/TextTypo.Small.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="По соответствию"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_type_sort_state_default" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_for_expand_vacancy"
+        tools:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_offers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_offer" />
+
+        <TextView
+            android:id="@+id/home_title_vac_for_you"
+            style="@style/TextTypo.Large.Semibold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/title_vacancy_for_y" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_vacancy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_more_vacancies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_offers"
+        app:layout_constraintVertical_bias="0.0"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_vacancy" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_more_vacancies"
+        style="@style/CustomButton.Blue.Semibold"
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="8dp"
+        android:text="Еще 143 вакансии"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

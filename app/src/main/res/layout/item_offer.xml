@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="132dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/CustomCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="12dp">
+
+            <!-- //TODO вставить картинку,написать к ней описание-->
+            <ImageView
+                android:id="@+id/icon_for_your_offers"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/offer_icon"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--//TODO сделать показ в соответствии с имеющимся контентом
+            Берется из title. Может отображаться в 3 строки, если объект button отсутствует.
+             Если текст длиннее 3-х строк, то обрезается по пробелу. Если объект
+            button есть, то отображение происходит аналогично, но только в 2 строки, т.к. в третьей
+            строки будет значение из button.text.-->
+            <TextView
+                android:id="@+id/text_label_employees"
+                style="@style/TextTypo.Small.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:maxLines="3"
+                android:text="Какой то текст который будет в будущем"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/icon_for_your_offers" />
+
+
+            <!--//TODO сделать стиль для этого текста  Small.Regular но только зеленый
+            Отображается зеленым цветом согласно макету, если пришло
+            значение button.text. Иначе не отображается.-->
+            <TextView
+                android:id="@+id/tv_up_resume"
+                style="@style/TextTypo.Small.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:text="@string/up_your_resume"
+                android:textColor="@color/green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_label_employees" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
