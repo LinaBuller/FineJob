@@ -24,8 +24,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_vacancy"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="3"
+        tools:itemCount="2"
         tools:listitem="@layout/item_vacancy" />
 </LinearLayout>

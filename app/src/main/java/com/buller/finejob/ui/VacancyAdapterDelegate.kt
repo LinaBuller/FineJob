@@ -13,7 +13,8 @@ class VacancyAdapterDelegate(
     private val itemClickedListener: (Vacancy) -> Unit,
     private val onFavoriteIconClick: (Vacancy) -> Unit,
     private val onResponseButtonClick: (Vacancy) -> Unit,
-    private val setHumansViewsCount:(Int)->String
+    private val setHumansViewsCount:(Int)->String,
+    private val setPublishedDate:(String)->String
 ) : AdapterDelegate<List<DisplayableItem>>() {
     override fun isForViewType(items: List<DisplayableItem>, position: Int): Boolean {
         return items[position] is Vacancy
@@ -43,19 +44,18 @@ class VacancyAdapterDelegate(
                 }
                 nameVacancy.text = item.title
 
-                if (item.salary.short == null) {
-                    moneyVacancy.visibility = View.GONE
-                } else {
+                if (item.salary.short!=null){
                     moneyVacancy.text = item.salary.short
+                }else{
+                    moneyVacancy.visibility = View.GONE
                 }
                 companyName.text = item.company
                 townCompanyName.text = item.address.town
 
                 experience.text = item.experience.text
-                icon.isSelected = item.isFavorite
-                //TODO исправить в правильную строку, приходит  "publishedDate": "2024-02-28",
-                publishTime.text = item.publishedDate
-                icon.setOnClickListener { onFavoriteIconClick(item) }
+                imbFavorite.isSelected = item.isFavorite
+                publishTime.text = setPublishedDate.invoke(item.publishedDate)
+                imbFavorite.setOnClickListener { onFavoriteIconClick(item) }
                 btResponse.setOnClickListener { onResponseButtonClick(item) }
                 itemView.setOnClickListener { itemClickedListener(item) }
             }

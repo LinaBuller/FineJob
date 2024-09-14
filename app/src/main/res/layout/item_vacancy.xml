@@ -25,12 +25,10 @@
                 android:orientation="vertical"
                 android:paddingEnd="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/bt_response"
-                app:layout_constraintEnd_toStartOf="@+id/icon"
+                app:layout_constraintEnd_toStartOf="@+id/imb_favorite"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
-                <!--//TODO сделать стиль для этого текста  Small.Regular но только зеленый-->
 
                 <TextView
                     android:id="@+id/text_info_search_employees"
@@ -96,13 +94,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:orientation="horizontal">
-                    <!-- //TODO вставить картинку,написать к ней описание-->
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginEnd="8dp"
-                        android:src="@drawable/ic_type_exp_state_default" />
+                        android:src="@drawable/ic_type_exp_state_default"
+                        android:contentDescription="@string/experience_icon" />
 
                     <TextView
                         android:id="@+id/experience"
@@ -116,7 +114,6 @@
                         android:textSize="14sp" />
                 </LinearLayout>
 
-                <!-- //TODO Постараться учесть склонение месяца в зависимости от дня.-->
                 <TextView
                     android:id="@+id/publish_time"
                     style="@style/CommentText.Regular"
@@ -127,12 +124,12 @@
                     android:text="Опубликовано 20 февраля" />
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/icon"
+            <ImageButton
+                android:id="@+id/imb_favorite"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
+                android:background="@drawable/selector_favorite"
                 android:contentDescription="@string/favorite_icon"
-                android:src="@drawable/selector_favorite"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -147,6 +144,4 @@
                 app:layout_constraintStart_toStartOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-    <!-- //TODO добавить плавающую кнопку карты при раскрытом списке вакансий-->
 </LinearLayout>

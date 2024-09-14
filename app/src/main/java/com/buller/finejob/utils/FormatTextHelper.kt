@@ -2,7 +2,7 @@ package com.buller.finejob.utils
 
 object FormatTextHelper {
 
-    fun makeFormattedStroke(stroke:List<String>): String {
+    fun makeFormattedStroke(stroke: List<String>): String {
         val strBuilder = StringBuilder()
         val strSeparator = ", "
         stroke.forEachIndexed { index, str ->

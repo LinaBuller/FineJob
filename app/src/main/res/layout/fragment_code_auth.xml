@@ -36,7 +36,6 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <!-- //TODO настроить центр в текстовых полях-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/number_1_layout"
                 style="@style/CustomTextInputLayout"

@@ -48,7 +48,9 @@
                         style="@style/CustomTextInputEditText"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:focusableInTouchMode="false"
                         android:hint="@string/hint_job_title_keywords"
+                        android:inputType="none"
                         android:paddingStart="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -115,8 +117,8 @@
                 android:layout_height="16dp"
                 android:layout_gravity="bottom"
                 android:layout_marginStart="6dp"
-                android:src="@drawable/ic_type_sort_state_default"
-                android:contentDescription="@string/sorting_vacancies_icon" />
+                android:contentDescription="@string/sorting_vacancies_icon"
+                android:src="@drawable/ic_type_sort_state_default" />
 
         </LinearLayout>
 

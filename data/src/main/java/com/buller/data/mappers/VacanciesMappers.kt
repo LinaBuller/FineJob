@@ -5,6 +5,7 @@ import com.buller.domain.entities.Address
 import com.buller.domain.entities.Button
 import com.buller.domain.entities.Experience
 import com.buller.domain.entities.Offer
+import com.buller.domain.entities.ResponseInfo
 import com.buller.domain.entities.Salary
 import com.buller.domain.entities.Vacancy
 
@@ -61,4 +62,10 @@ fun ResponseDto.toOffersList(): List<Offer> {
         offerList.add(offer)
     }
     return offerList
+}
+
+fun ResponseDto.toResponseInfo(): ResponseInfo {
+    val vacancyList = toVacanciesList()
+    val offerList = toOffersList()
+    return ResponseInfo(vacancyList = vacancyList, offerList = offerList)
 }

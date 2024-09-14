@@ -5,10 +5,7 @@
     <string name="title_responses">Отклики</string>
     <string name="title_messages">Сообщения</string>
     <string name="title_profile">Профиль</string>
-    <!-- TODO: Remove or change this placeholder text -->
-
     <string name="text_for_empty_fragments">Your advertisement could be here</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="label_enter_in_personal_account">Вход в личный кабинет</string>
     <string name="label_search_job">Поиск работы</string>
@@ -29,6 +26,8 @@
     <string name="favorite_icon">Favorite icon</string>
     <string name="search_keywords_icon">Search keywords icon</string>
     <string name="sorting_vacancies_icon">Sorting vacancies icon</string>
+    <string name="published_date">Опубликовано %s</string>
+    <string name="experience_icon">Experience icon</string>
 
     <!-- one - для одного элемента (1 вакансия)
     few - для нескольких элементов (2, 3, 4 вакансии)

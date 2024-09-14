@@ -36,7 +36,7 @@ val dataModule = module {
 
     single<VacanciesApiService> { get<Retrofit>().create(VacanciesApiService::class.java) }
 
-    //TODO как происходит логированние
+    //Логированние
     single {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply {

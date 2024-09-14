@@ -25,7 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <!-- Будет менятся в зависимости открыт список или нет-->
+
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -47,7 +47,9 @@
                         style="@style/CustomTextInputEditText"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
+                        android:focusableInTouchMode="false"
                         android:hint="@string/hint_job_title_keywords"
+                        android:inputType="none"
                         android:paddingStart="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +59,6 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- //TODO сделать из этой кнопки стиль для таких же-->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -75,36 +76,34 @@
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_offers"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rc_offers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_search_part"
-        tools:visibility="visible">
+        tools:itemCount="1"
+        tools:listitem="@layout/item_offer" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rc_offers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            tools:itemCount="1"
-            tools:listitem="@layout/item_offer" />
 
-        <TextView
-            android:id="@+id/home_title_vac_for_you"
-            style="@style/TextTypo.Large.Semibold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/title_vacancy_for_y" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/home_title_vac_for_you"
+        style="@style/TextTypo.Large.Semibold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="16dp"
+        android:text="@string/title_vacancy_for_y"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rc_offers" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_vacancy"
@@ -116,7 +115,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_offers"
+        app:layout_constraintTop_toBottomOf="@+id/home_title_vac_for_you"
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="1"
         tools:listitem="@layout/item_vacancy" />
