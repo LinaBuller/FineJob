@@ -8,7 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 open class BaseBottomMenuFragment : Fragment() {
 
-    fun createFavoriteBadge(count: Int) {
+    fun setFavoriteBadge(count: Int) {
         val bottomNavigationView =
             requireActivity().findViewById<BottomNavigationView>(R.id.nav_view)
         val badge = bottomNavigationView.getOrCreateBadge(R.id.navigation_favorite)
