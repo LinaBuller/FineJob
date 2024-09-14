@@ -14,7 +14,7 @@
         android:text="@string/title_favorite" />
 
     <TextView
-        android:id="@+id/coun_vacancies"
+        android:id="@+id/count_vacancies"
         style="@style/CommentText.Regular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

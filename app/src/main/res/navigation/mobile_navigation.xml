@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.buller.finejob.ui.home.HomeFragmentBottom"
+        android:name="com.buller.finejob.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navigation_home_to_extended_home_fragment"
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.buller.finejob.ui.favorite.FavoriteFragmentBottom"
+        android:name="com.buller.finejob.ui.favorite.FavoriteFragment"
         tools:layout="@layout/fragment_favorite" >
         <action
             android:id="@+id/action_navigation_favorite_to_vacancyFragment"
@@ -41,7 +41,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/extended_home_fragment"
-        android:name="com.buller.finejob.ui.home.HomeExtendedFragmentBottom"
+        android:name="com.buller.finejob.ui.home.HomeExtendedFragment"
         android:label="ExtendedHomeFragment"
         tools:layout="@layout/fragment_extended_home">
         <action

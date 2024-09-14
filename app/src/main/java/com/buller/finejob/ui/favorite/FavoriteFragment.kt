@@ -1,7 +1,6 @@
 package com.buller.finejob.ui.favorite
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,11 +13,12 @@ import com.buller.finejob.ui.VacancyAdapterDelegateFactory
 import com.buller.finejob.ui.home.NavigateDestination
 import com.buller.finejob.ui.home.SharedViewModel
 import com.buller.finejob.utils.HorizontalSpacesItemDecorator
+import com.buller.finejob.utils.PluralsHelper
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
-class FavoriteFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
+class FavoriteFragment : BaseBottomMenuFragment(), NavigateDestination {
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
@@ -42,8 +42,8 @@ class FavoriteFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
     private fun initFavoriteVacancyList() = with(binding) {
 
         val favoriteAdapter = vacancyAdapterDelegateFactory.create(
-            fragment = this@FavoriteFragmentBottom,
-            destination = this@FavoriteFragmentBottom,
+            fragment = this@FavoriteFragment,
+            destination = this@FavoriteFragment,
             favoriteStateManager = sharedViewModel
         )
 
@@ -57,7 +57,6 @@ class FavoriteFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
 
         sharedViewModel.vacancyList.observe(viewLifecycleOwner) { vacancies ->
             val favoriteVacancyList = vacancies.filter { it.isFavorite }
-            Log.d("TupayaTvar", " Update list from sharedViewModel ${favoriteVacancyList.size}")
             vacancyListDelegationAdapter.updateAdapters(favoriteVacancyList)
         }
     }
@@ -65,8 +64,13 @@ class FavoriteFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
 
     private fun initFavoriteBadge() {
         sharedViewModel.favoriteVacancyCount.observe(viewLifecycleOwner) { count ->
-            createFavoriteBadge(count)
+            updateFavoriteLabel(count)
+            setFavoriteBadge(count)
         }
+    }
+
+    private fun updateFavoriteLabel(count: Int) = with(binding) {
+        countVacancies.text = PluralsHelper.getPlurals(resources, R.plurals.vacancies_count, count)
     }
 
     override fun onDestroyView() {

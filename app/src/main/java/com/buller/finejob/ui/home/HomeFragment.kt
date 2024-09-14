@@ -25,7 +25,7 @@ import com.buller.finejob.utils.VerticalSpacesItemDecorator
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import org.koin.android.ext.android.inject
 
-class HomeFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
+class HomeFragment : BaseBottomMenuFragment(), NavigateDestination {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -71,8 +71,8 @@ class HomeFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
     private fun initVacanciesPart() = with(binding) {
 
         val vacancyAdapter = vacancyAdapterDelegateFactory.create(
-            fragment = this@HomeFragmentBottom,
-            destination = this@HomeFragmentBottom,
+            fragment = this@HomeFragment,
+            destination = this@HomeFragment,
             favoriteStateManager = sharedViewModel
         )
 
@@ -152,7 +152,7 @@ class HomeFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
 
     private fun initFavoriteBadge() {
         sharedViewModel.favoriteVacancyCount.observe(viewLifecycleOwner) { count ->
-            createFavoriteBadge(count = count)
+            setFavoriteBadge(count = count)
         }
     }
 

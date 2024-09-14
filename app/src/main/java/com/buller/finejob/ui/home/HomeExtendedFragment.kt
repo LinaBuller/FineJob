@@ -17,7 +17,7 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 
-class HomeExtendedFragmentBottom : BaseBottomMenuFragment(), NavigateDestination {
+class HomeExtendedFragment : BaseBottomMenuFragment(), NavigateDestination {
     private var _binding: FragmentExtendedHomeBinding? = null
     private val binding get() = _binding!!
     private val sharedViewModel: SharedViewModel by activityViewModel()
@@ -39,13 +39,13 @@ class HomeExtendedFragmentBottom : BaseBottomMenuFragment(), NavigateDestination
 
     private fun initFavoriteBadge() {
         sharedViewModel.favoriteVacancyCount.observe(viewLifecycleOwner) { count ->
-            createFavoriteBadge(count = count)
+            setFavoriteBadge(count = count)
         }
     }
 
     private fun initVacanciesPart() {
         val vacancyAdapter = vacancyAdapterDelegateFactory.create(
-            fragment = this@HomeExtendedFragmentBottom,
+            fragment = this@HomeExtendedFragment,
             destination = this,
             sharedViewModel
 
