@@ -6,9 +6,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class OfferDto(
     @field:Json(name = "button")
-    val button: ButtonDto,
+    val button: ButtonDto?,
     @field:Json(name = "id")
-    val id: String,
+    val id: String?,
     @field:Json(name = "link")
     val link: String,
     @field:Json(name = "title")

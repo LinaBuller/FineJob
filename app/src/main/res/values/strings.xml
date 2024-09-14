@@ -28,6 +28,7 @@
     <string name="company_verify_icon">Company verify icon</string>
     <string name="favorite_icon">Favorite icon</string>
     <string name="search_keywords_icon">Search keywords icon</string>
+    <string name="sorting_vacancies_icon">Sorting vacancies icon</string>
 
     <!-- one - для одного элемента (1 вакансия)
     few - для нескольких элементов (2, 3, 4 вакансии)
@@ -38,7 +39,14 @@
         <item quantity="one">%d вакансия</item>
         <item quantity="few">%d вакансии</item>
         <item quantity="many">%d вакансий</item>
-        <item quantity="other">%d вакансии</item>
+        <item quantity="other">%d вакансий</item>
+    </plurals>
+
+    <plurals name="yet_vacancies_count">
+        <item quantity="one">Еще %d вакансия</item>
+        <item quantity="few">Еще %d вакансии</item>
+        <item quantity="many">Еще %d вакансий</item>
+        <item quantity="other">Еще %d вакансии</item>
     </plurals>
 
     <!-- one - для одного элемента (1 человек)
@@ -60,15 +68,13 @@
         <item quantity="other">Сейчас просматривает %d человек</item>
     </plurals>
 
-
-    <!-- one - для одного элемента (1 год)
-    few - для нескольких элементов (2, 3, 4 лет)
-    other - для остальных случаев (например, для дробных чисел)
-    -->
-    <plurals name="exp_count">
-        <item quantity="one">Опыт от %d года до %d лет</item>
-        <item quantity="few">Опыт от %d лет до %d лет</item>
-        <item quantity="other">Опыт от %d лет до %d лет</item>
+    <plurals name="responses_count">
+        <item quantity="one">%d человек уже откликнулись</item>
+        <item quantity="few">%d человека уже откликнулись</item>
+        <item quantity="many">%d человек уже откликнулись</item>
+        <item quantity="other">%d человек уже откликнулись</item>
     </plurals>
+
+
 
 </resources>

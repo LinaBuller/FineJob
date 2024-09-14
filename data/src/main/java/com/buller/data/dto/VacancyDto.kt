@@ -8,7 +8,7 @@ data class VacancyDto(
     @field:Json(name = "id")
     val id: String,
     @field:Json(name = "lookingNumber")
-    val lookingNumber: Int,
+    val lookingNumber: Int?,
     @field:Json(name = "title")
     val title: String,
     @field:Json(name = "address")
@@ -26,9 +26,9 @@ data class VacancyDto(
     @field:Json(name = "schedules")
     val schedules: List<String>,
     @field:Json(name = "appliedNumber")
-    val appliedNumber: Int,
+    val appliedNumber: Int?,
     @field:Json(name = "description")
-    val description: String,
+    val description: String?,
     @field:Json(name = "responsibilities")
     val responsibilities: String,
     @field:Json(name = "questions")

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.buller.finejob.databinding.FragmentResponsesBinding
 
 class ResponsesFragment : Fragment() {
@@ -21,9 +20,6 @@ class ResponsesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
         _binding = FragmentResponsesBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

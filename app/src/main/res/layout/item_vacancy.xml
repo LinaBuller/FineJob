@@ -24,7 +24,7 @@
                 android:layout_marginBottom="16dp"
                 android:orientation="vertical"
                 android:paddingEnd="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/materialButton"
+                app:layout_constraintBottom_toTopOf="@+id/bt_response"
                 app:layout_constraintEnd_toStartOf="@+id/icon"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -138,7 +138,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/materialButton"
+                android:id="@+id/bt_response"
                 style="@style/CustomRoundButton"
                 android:layout_width="match_parent"
                 android:text="@string/will_respond"

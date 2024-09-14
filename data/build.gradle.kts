@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.androidLibrary)
     id ("com.google.devtools.ksp") version "2.0.20-1.0.25"
-
+    id("kotlin-kapt")
 }
 
 android {
@@ -46,6 +46,9 @@ dependencies {
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.moshi)
-    ksp(libs.moshi.kotlin.codegen)
+    //ksp(libs.moshi.kotlin.codegen)
     implementation(libs.converter.moshi)
+    implementation(libs.logging.interceptor)
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
+    implementation(libs.squareup.moshi.kotlin)
 }

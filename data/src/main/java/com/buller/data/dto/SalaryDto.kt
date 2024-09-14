@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class SalaryDto(
     @field:Json(name = "full")
-    val full: String,
+    val full: String?,
     @field:Json(name = "short")
-    val short: String
+    val short: String?
 )

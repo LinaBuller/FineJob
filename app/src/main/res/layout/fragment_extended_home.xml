@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/home_search_part"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -25,14 +25,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <!-- Будет менятся в зависимости открыт список или нет-->
+
                 <ImageView
+                    android:id="@+id/bt_back_on_home"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="8dp"
                     android:contentDescription="@string/search_keywords_icon"
-                    android:src="@drawable/ic_type_search_state_default" />
+                    android:src="@drawable/ic_type_left_arrow_state_default" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/text_layout_login"
@@ -76,33 +77,49 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layout_offers"
+        android:id="@+id/linearLayout_for_expand_vacancy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home_search_part"
-        tools:visibility="visible">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rc_offers"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            tools:itemCount="1"
-            tools:listitem="@layout/item_offer" />
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
 
         <TextView
-            android:id="@+id/home_title_vac_for_you"
-            style="@style/TextTypo.Large.Semibold"
+            android:id="@+id/vacancies_count"
+            style="@style/TextTypo.Small.Regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/title_vacancy_for_y" />
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="145 вакансий" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end">
+
+            <TextView
+                style="@style/TextTypo.Small.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="По соответствию"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_type_sort_state_default"
+                android:contentDescription="@string/sorting_vacancies_icon" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -116,9 +133,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_offers"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_for_expand_vacancy"
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="1"
         tools:listitem="@layout/item_vacancy" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

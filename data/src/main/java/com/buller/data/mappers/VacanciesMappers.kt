@@ -49,7 +49,9 @@ fun ResponseDto.toVacanciesList(): List<Vacancy> {
 fun ResponseDto.toOffersList(): List<Offer> {
     val offerList = mutableListOf<Offer>()
     offers.map { offerDto ->
-        val button = Button(text = offerDto.button.text)
+
+        val button = Button(text = offerDto.button?.text)
+
         val offer = Offer(
             id = offerDto.id,
             link = offerDto.link,

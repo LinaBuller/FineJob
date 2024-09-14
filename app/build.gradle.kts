@@ -2,7 +2,10 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    id("kotlin-kapt")
     id("com.google.devtools.ksp") version "2.0.20-1.0.25"
+    id ("androidx.navigation.safeargs.kotlin")
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -52,6 +55,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
     //koin
     implementation (libs.koin.core)
     implementation (libs.koin.android)
@@ -59,9 +63,10 @@ dependencies {
     //retrofit
     implementation(libs.retrofit)
     implementation(libs.moshi)
-    ksp(libs.moshi.kotlin.codegen)
     implementation(libs.converter.moshi)
     implementation(libs.logging.interceptor)
+    kapt("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
+    implementation(libs.squareup.moshi.kotlin)
 
     //adapterDelegates
     implementation (libs.adapterdelegates4.kotlin.dsl)

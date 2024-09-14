@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 data class AddressDto(
     @field:Json(name = "house")
     val house: String,
-    @field:Json(name = "house")
+    @field:Json(name = "street")
     val street: String,
     @field:Json(name = "town")
     val town: String
